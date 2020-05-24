@@ -6,7 +6,11 @@ clear = lambda: os.system('cls' if os.name == 'nt' else 'clear')
 # THIS USES PYTHON 3.6+
 #
 
-# Map of all require conversions
+#
+# This was turned in after the required time and doesn't count for the interview. Just made it because i wanted to make my attempt better
+#
+
+# Dict of all require conversions
 CONVERSIONS = collections.OrderedDict((
     ('I', 1),
     ('V', 5),
@@ -18,7 +22,6 @@ CONVERSIONS = collections.OrderedDict((
 ))
 
 KEYS = list(CONVERSIONS.keys())
-
 
 def Check(a):
     for i in KEYS:
@@ -37,8 +40,8 @@ def RomToDec(str):
     pos = 0
     while pos < len(str):
         if not(pos + 1 == len(str)) and KEYS.index(str[pos][0]) < KEYS.index(str[pos + 1][0]): # Should Sub?
-            diff = KEYS.index(str[pos][0]) - KEYS.index(str[pos + 1][0])
-            if -3 < diff and diff < 0 and (len(str) - 2 == pos or KEYS.index(str[pos+1][0]) >= KEYS.index(str[pos+2][0])): # is it only 2 less and there isnt double sub
+            diff = KEYS.index(str[pos][0]) - KEYS.index(str[pos + 1][0]) # Only -1 to -2 pos
+            if (-3 < diff and diff < 0) and len(str[pos]) == 1 and (pos + 2 == len(str) or KEYS.index(str[pos+1][0]) >= KEYS.index(str[pos+2][0])): # sub is only 1 long and there isnt double sub
                 decNum += CONVERSIONS[str[pos + 1][0]] * len(str[pos + 1]) - CONVERSIONS[str[pos][0]]
                 pos += 2
             else: return None
@@ -49,15 +52,13 @@ def RomToDec(str):
 
 # Mainloop
 while True:
-    clear()
-    romNum = input("\nRoman Numeral: ")
+    romNum = input("Roman Numeral: ")
+    if romNum == 'q':
+        break
     decNum = RomToDec(romNum)
     if decNum != None:
         print(romNum + " is " + str(decNum))
     else:
         print("Please input a valid Roman Numeral")
-    again = input("\nAgain : (y/n) ")
-    if again == "y" or again == '1':
-        pass
-    else:
-        break
+    clear()
+    print("\nEnter q to quit or another")
