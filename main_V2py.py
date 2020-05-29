@@ -46,7 +46,7 @@ def RomToDec(str):
                 pos += 2
             else: return None
         else:
-            decNum += CONVERSIONS[str[pos][0]] * len(str[-1])
+            decNum += CONVERSIONS[str[pos][0]] * len(str[pos])
             pos += 1
     return decNum
 

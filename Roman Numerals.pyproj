@@ -5,7 +5,7 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>{64f6475b-0937-4e52-b49d-1f99af0f3c91}</ProjectGuid>
     <ProjectHome />
-    <StartupFile>main_V2py.py</StartupFile>
+    <StartupFile>toRoman.py</StartupFile>
     <SearchPath />
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
@@ -21,6 +21,9 @@
   <ItemGroup>
     <Compile Include="main.py" />
     <Compile Include="main_V2py.py" />
+    <Compile Include="toRoman.py">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Content Include="RomToDec.exe" />
