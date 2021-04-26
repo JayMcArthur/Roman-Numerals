@@ -7,7 +7,7 @@ clear = lambda: os.system('cls' if os.name == 'nt' else 'clear')
 # Dont know how I missed it the first time. It would put my time up to 2.5 Hrs
 #
 
-# Allows for any size of deciaml number by getting rid of hard code
+# Allows for any size of decimal number by getting rid of hard code
 def getConversion(items):
     tens = 1
     state = -1
@@ -48,7 +48,6 @@ while True:
     try:
         romNum = DecToRom(int(decNum))
         print(decNum + " is " + romNum)
-    except:
+    except ValueError:
         print("Please input a valid Decimal Number")
-    clear()
     print("\nEnter q to quit or another")

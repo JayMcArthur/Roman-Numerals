@@ -35,8 +35,6 @@ def SubCheck(str, i):
     else:
         return True
 
-
-
 # Converter
 def RomToDec(str):
     str = list(''.join(group) for key, group in groupby(str))
